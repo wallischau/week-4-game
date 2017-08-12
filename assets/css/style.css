@@ -1,0 +1,77 @@
+/*Crystal game                     */
+/*Author: Wallis Chau              */
+/*Description: Crystal game        */
+/*Date: 8/7/17                     */
+
+#logo {
+	width: 600px;
+	border: 3px solid green;
+}
+
+.title {
+	text-align: center;
+	border: 3px solid yellow;
+}
+
+#instruction {
+	width: 500px;
+	border: 3px solid red;
+}
+
+#HeadMsg {
+	width: 200px;
+	height: 50px;
+}
+#targetscore {
+	height: 100px;
+	width: 100px;
+	float: left;
+	border: 3px solid orange;
+}
+
+#winstatus {
+	padding: 10px;
+	float: left;
+}
+.crystal {
+	clear: both;
+	width: 500px;
+	height: 50px;
+}
+
+#crystallist {
+	height: 50px;
+}
+
+.cr {
+	/*border: 3px solid black;*/
+	height: 50px;
+	width: 50px;
+	float: left;
+}
+
+#scoretext {
+	clear: both;
+}
+
+#score {
+	width: 200px;
+	height: 100px;
+	border: 3px solid green;
+	float: left;
+}
+
+#winmsg {
+	width: 200px;
+	height: 30px;
+	border: 3px solid yellow;
+	float: left;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.invisible {
+	visibility: hidden;
+}

@@ -1,0 +1,61 @@
+<!-- Crystal game                      -->
+<!-- Author: Wallis Chau               -->
+<!-- Description: Crystal game         -->
+<!-- Date: 8/7/17                      -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The crystal Collector</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<article id="toparea">
+		<section id="logo">
+			<h2 class="title">Crystal Collector</h2>
+		</section>
+		<section id="instruction"> 
+			<p class="instruct">Instruction:</p><hr>
+			<p class="instructcontent">
+				You will begin with a random number at start.</p>
+			<p class="instructcontent">  There are 6 crystals with different hidden values.  You click each crystal to add its hidden value to the sum. If that sum is equal the the random number, you win. If the sume is greater then the random number, you lose. The game restart after a win or lose with new random number and new hidden crystal values. </p>
+			</p>
+		</section>
+		<section class="infoarea">
+			<button id="HeadMsg">Start</button>
+		</section>	
+	</article>
+	<article id="mainarea">
+		<section id="targetscore">39
+		</section>
+		<section id="winstatus">win:
+			<div id="win">0</div>
+			lose: 
+			<div id="lose">0</div>
+		</section>
+		<section class="crystal">
+			<ul id="crystallist">
+			<li id="crystal-1" class="cr"><img src="assets/images/zircon.png"></li>
+			<li id="crystal-2" class="cr"><img src="assets/images/green.png"></li>
+			<li id="crystal-3" class="cr"><img src="assets/images/aquamarine.png"></li>
+			<li id="crystal-4" class="cr"><img src="assets/images/redgem.png"></li>
+			</ul>
+			<div></div>
+		</section>
+		<section id="scoretext">Your score is: </section>
+		<section id="score">0</section>
+		<div id="winmsg" class="invisible"></div>
+
+	</article>
+	
+
+
+
+
+
+	<script type="text/javascript" src="assets/javascript/games.js">
+	</script>
+	
+</body>
+</html>
