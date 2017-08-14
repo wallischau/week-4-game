@@ -3,8 +3,8 @@
 /*Description: Crystal game        */
 /*Date: 8/7/17                     */
 
+/* game title - section*/
 #logo {
-	width: 600px;
 	border: 3px solid green;
 }
 
@@ -13,58 +13,83 @@
 	border: 3px solid yellow;
 }
 
+/* instruction box - section*/
 #instruction {
-	width: 500px;
-	border: 3px solid red;
+	padding: 5px;
+	margin: 10px 80px;
+	border: 3px solid purple;
 }
 
+/* start button */
 #HeadMsg {
+	margin: 10px 40%; 
 	width: 200px;
 	height: 50px;
 }
+
+h2 {
+	font-weight: bold;
+	text-align: center;
+	font-size: 20pt;
+	padding: 30px;
+}
+
 #targetscore {
 	height: 100px;
 	width: 100px;
+	clear: both;
 	float: left;
-	border: 3px solid orange;
+	border: 3px solid yellow;
 }
 
 #winstatus {
 	padding: 10px;
+	width: 200px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20pt;
 	float: left;
 }
+
+/* crystal icon - section */
 .crystal {
-	clear: both;
-	width: 500px;
-	height: 50px;
+	float: left;
+	width: 300px;
+	height: 60px;
 }
 
 #crystallist {
-	height: 50px;
+	height: 60px;
 }
 
 .cr {
-	/*border: 3px solid black;*/
-	height: 50px;
-	width: 50px;
+	height: 60px;
+	width: 60px;
 	float: left;
 }
 
-#scoretext {
-	clear: both;
+#targettext, #scoretext {
+	width: 130px;
+	float: left;
 }
 
+/* player score - section */
 #score {
-	width: 200px;
+	margin-left: 30px;
+	width: 100px;
 	height: 100px;
 	border: 3px solid green;
 	float: left;
 }
 
+/* message at end game - div */
 #winmsg {
 	width: 200px;
 	height: 30px;
 	border: 3px solid yellow;
+	font-weight: bold;
+	text-align: center;
+	font-size: 20pt;
 	float: left;
 }
 
@@ -74,4 +99,15 @@
 
 .invisible {
 	visibility: hidden;
+}
+
+@media screen and (max-width: 640px) {
+	#HeadMsg {
+		margin: 10px 20%;
+	}
+
+	#winstatus {
+		font-size: 16pt;
+		width: inherit;	
+	}
 }

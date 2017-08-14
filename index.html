@@ -16,23 +16,33 @@
 			<h2 class="title">Crystal Collector</h2>
 		</section>
 		<section id="instruction"> 
-			<p class="instruct">Instruction:</p><hr>
+			<p class="instruct">Instruction:</p><br>
 			<p class="instructcontent">
 				You will begin with a random number at start.</p>
-			<p class="instructcontent">  There are 6 crystals with different hidden values.  You click each crystal to add its hidden value to the sum. If that sum is equal the the random number, you win. If the sume is greater then the random number, you lose. The game restart after a win or lose with new random number and new hidden crystal values. </p>
+			<p class="instructcontent">  There are 4 crystals with different hidden values.  You click each crystal to add its hidden value to the sum. If that sum is equal the the random number, you win. If the sume is greater then the random number, you lose. The game restart after a win or lose with new random number and new hidden crystal values. </p>
 			</p>
+			<p>Click start to start the game</p>
 		</section>
 		<section class="infoarea">
 			<button id="HeadMsg">Start</button>
 		</section>	
 	</article>
 	<article id="mainarea">
-		<section id="targetscore">39
+		<section id="targettext">Target score is: </section>
+		<section id="scoretext">Your score is: </section>
+		<section id="targetscore">
+			<h2>39</h2>
 		</section>
-		<section id="winstatus">win:
-			<div id="win">0</div>
-			lose: 
-			<div id="lose">0</div>
+		<section id="score">
+			<h2>0</h2>
+		</section>
+		<section id="winstatus">
+			<div>win:
+			<span id="win">0</span>
+			</div>
+			<div> lose:
+			<span id="lose">0</span>
+			</div>
 		</section>
 		<section class="crystal">
 			<ul id="crystallist">
@@ -43,8 +53,6 @@
 			</ul>
 			<div></div>
 		</section>
-		<section id="scoretext">Your score is: </section>
-		<section id="score">0</section>
 		<div id="winmsg" class="invisible"></div>
 
 	</article>

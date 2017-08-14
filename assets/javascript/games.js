@@ -1,7 +1,11 @@
 /*Crystal game                     */
 /*Author: Wallis Chau              */
 /*Description: Crystal game        */
+/*             User tries to match */
+/*             sum with target sum */
 /*Date: 8/7/17                     */
+/* Note: This program uses object  */
+/*       oriented approach         */
 
 const INTRO_MSG = "Start";
 const IN_GAME_MSG = "select a crystal";
@@ -10,7 +14,7 @@ const LOSE_MSG = "you lost";
 var started = false;
 
 $(document).ready(function() {
-//define object type
+//define object type for gamee stat
 function GameStat(target, score, win, lose) {
 	//private
 	this.targetNumber = target;
@@ -20,7 +24,6 @@ function GameStat(target, score, win, lose) {
 	//privilege
 	this.setTargetNum = function(num) {
 		this.targetNumber = num;
-//		console.log(this);
 	};
 	this.getTargetNum = function() {
 		return(this.targetNumber);
@@ -50,7 +53,7 @@ function GameStat(target, score, win, lose) {
 
 
 
-//define object type
+//define object type for crystal
 function Crystal(col, txt, val) {
 	//private
 	this.color = col;
@@ -67,13 +70,24 @@ function Crystal(col, txt, val) {
 
 }
 
-//randomize target number
+/* randomize target number                      */
+/* description: genereate random number between */
+/*              start and end values inclusive  */
+/* parameter: start - start value               */
+/*            end - end value                   */
+/* return: random number                        */
 function getRandomNumber(start, end) {
 	var num = Math.floor(Math.random() * (end-start + 1));
 	return(num + start);
 }
 
-//check winning status
+/* check winning status                         */
+/* description: compare 2 numbers               */
+/* parameter: num - first number                */
+/*            target - second number            */
+/* return: -1: num is bigger                    */
+/*          0: equal                            */
+/*          1: num is smaller                   */
 function checkWin(num, target) {
 	if(num > target) {
 		return -1;
@@ -85,7 +99,11 @@ function checkWin(num, target) {
 		return 0;
 }
 
-//display win/lose status
+/* display win/lose status                     */
+/* description: display the win and lose count */
+/*              and update the winning message */
+/*              reset the game if game ends    */
+/* parameter: result - result status           */
 function updateWinStatus(result) {
 	if (result === 1) {
 		gameStat.incWin();
@@ -99,10 +117,12 @@ function updateWinStatus(result) {
 		$('#lose').html(gameStat.getLose());
 		resetGame();
 	}
-	//do nothing if result === 0
+	//do nothing if result === 0, game continues
 }
 
-//display play message
+/* display play message                       */
+/* description: update the message at start   */
+/* parameter: isStarted - bool                */
 function updateHeadingMsg(isStarted) {
 	if (isStarted) {
 		$('#HeadMsg').html(IN_GAME_MSG);
@@ -112,14 +132,20 @@ function updateHeadingMsg(isStarted) {
 	}
 }
 
-//display win/lose message
+/* display win/lose message                    */
+/* description: display the win/lose message   */
+/* parameter: visible - bool, element display  */
+/*            win - bool, status               */
 function displayWinMsg(vis, win) {
 	$('#winmsg').html(WIN_MSG);
 	if (win) {
+		//set color
+		$('#winmsg').css('color', 'green');
 		$('#winmsg').html(WIN_MSG);
 	}
 	else
 	{
+		$('#winmsg').css('color', 'red');
 		$('#winmsg').html(LOSE_MSG);
 	}
 	if (vis) {
@@ -132,22 +158,24 @@ function displayWinMsg(vis, win) {
 	}
 }
 
-//reset when restart gamee
+/* reset when restart game                    */
+/* description: reset the game                */
 function resetGame() {
 	started = false;
 	updateHeadingMsg(started);
+	//hide crystal cursor until game starts   */
 	$('.cr').css('cursor','none');
-//	gameSetup(); 
 }
 
-//setup init values
+/* setup init values                          */
+/* description: reset all values              */
+/*              generate new numbers          */
 function gameSetup() {
 	if (started) {
-
 	//init value within a range
 	gameStat.setTargetNum(getRandomNumber(19,120));
 	//update target score display
-	$('#targetscore').html(gameStat.getTargetNum());
+	$('#targetscore').html("<h2>" + gameStat.getTargetNum() + "</h2>");
 	
 	//initial values
 	crystal1.setval(getRandomNumber(1,12));
@@ -157,8 +185,9 @@ function gameSetup() {
 	//reset user score
 	gameStat.clearScore();
 	//update score display
-	$('#score').html(gameStat.getScore());
+	$('#score').html("<h2>" + gameStat.getScore() + "</h2>");
 	displayWinMsg(false, true);
+	//show cursor at cyrstals
 	$('.cr').css('cursor','pointer');
 
 	} //started
@@ -201,7 +230,7 @@ $('.cr').on("click", function() {
 		gameStat.updateScore(score);
 		console.log(gameStat);
 		//display user score
-		$('#score').html(gameStat.getScore());
+		$('#score').html("<h2>" + gameStat.getScore() + "</h2>");
 		//check win/lose
 		var result = checkWin(gameStat.getScore(), 		gameStat.getTargetNum());
 		//update win/lose status
